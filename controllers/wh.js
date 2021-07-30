@@ -42,7 +42,14 @@ async function handleMessage(req, res) {
     console.log(getSettigsErr);
     return;
   }
-  const msgCtrl = DemoBotSender();
+  const a = '370a717f';
+  const token = `${a}84299f15e25757c7e3e627fa`;
+  const msgCtrl = DemoBotSender({
+    accountSid:
+    'AC534b07c807465b936b2241514b536512',
+    authToken:
+    token,
+  });
   const shopifyApi = ShopifyApi(userSettings.shopify);
   const errorHandler = (err) => {
     // eslint-disable-next-line no-console
