@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const axios = require("axios");
 
-module.exports.DemoBotSender = () => {
+module.exports.DemoBotSender = ({ accountSid, authToken }) => {
   
   const herokuDemoURL = " https://f8d5cb0c6f83.ngrok.io/sendResponse";
 
