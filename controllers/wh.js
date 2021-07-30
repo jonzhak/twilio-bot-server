@@ -7,7 +7,7 @@ const UserSetting = require('../db/models/UserSettings');
 const UserDiscount = require('../db/models/UserDiscount');
 const UserReview = require('../db/models/UserReview');
 const UserGetSupport = require('../db/models/UserGetSupport');
-const { WhatsapSender } = require('../providers/WhatsapSender');
+const { DemoBotSender } = require('../providers/DemoBotSender');
 
 const {
   ShopifyApi,
@@ -22,6 +22,7 @@ async function handleMessage(req, res) {
   const accountSid = req.body.AccountSid;
   const fromNumber = req.body.From;
   const msg = req.body.Body;
+  console.log('INCOMING MESSAGE!:', msg, "FROM: ", fromNumber)
   console.log('wh controller', fromNumber, msg, req.body);
   if (fromNumber === 'whatsapp:+14155238886') {
     return;
@@ -41,7 +42,7 @@ async function handleMessage(req, res) {
     console.log(getSettigsErr);
     return;
   }
-  const msgCtrl = WhatsapSender(userSettings.twilio);
+  const msgCtrl = DemoBotSender();
   const shopifyApi = ShopifyApi(userSettings.shopify);
   const errorHandler = (err) => {
     // eslint-disable-next-line no-console
