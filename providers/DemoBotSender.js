@@ -20,6 +20,7 @@ module.exports.DemoBotSender = ({ accountSid, authToken }) => {
     if (fromNumber === 'whatsapp:+14155238886') {
       return null;
     }
+    console.log('DEMO BOT SENDER IS BEING ACTIVATED')
      return axios
     .post(herokuDemoURL, JSON.stringify(reqData), {
         headers: {
