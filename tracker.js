@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 const UserDiscount = require('./db/models/UserDiscount');
 const UserSetting = require('./db/models/UserSettings');
-const { WhatsapSender } = require('./providers/WhatsapSender');
+const { DemoBotSender } = require('./providers/DemoBotSender');
 
 const a = '370a717f';
 const token = `${a}84299f15e25757c7e3e627fa`;
-const msgCtrl = WhatsapSender({
+const msgCtrl = DemoBotSender({
   accountSid:
   'AC534b07c807465b936b2241514b536512',
   authToken:
